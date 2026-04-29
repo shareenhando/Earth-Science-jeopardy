@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Earth Science Jeopardy – Grade 8</title>
 
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b1c3d;
+    color: white;
+    text-align: center;
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid white;
+    width: 180px;
+    height: 80px;
+    font-size: 20px;
+    cursor: pointer;
+}
+th {
+    background-color: #123c7c;
+}
+td {
+    background-color: #1e5cb3;
+}
+td.used {
+    background-color: #0b1c3d;
+    cursor: default;
+}
+#questionBox, #answerBox {
+    margin: 15px auto;
+    padding: 15px;
+    border: 2px solid white;
+    width: 75%;
+    font-size: 22px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌍 Earth Science Jeopardy – Grade 8</h1>
+<p>Based on Chapter 1 – Earth Science</p>
+
+<table>
+<tr>
+<th>Layers of the Earth</th>
+<th>Plate Tectonics</th>
+<th>Earthquakes & Volcanoes</th>
+<th>Rocks & Minerals</th>
+<th>Mining in Canada</th>
+</tr>
+
+<tr>
+<td onclick="showQA(this,'What is the outermost layer of the Earth called?','The crust.')">100</td>
+<td onclick="showQA(this,'What are the large pieces of the lithosphere called?','Tectonic plates.')">100</td>
+<td onclick="showQA(this,'What causes earthquakes?','The movement of tectonic plates along faults.')">100</td>
+<td onclick="showQA(this,'What is a mineral?','A naturally occurring, inorganic solid with a crystal structure.')">100</td>
+<td onclick="showQA(this,'What is mining?','The process of removing Earth materials from the ground.')">100</td>
+</tr>
+
+<tr>
+<td onclick="showQA(this,'Which part of the core is liquid: inner or outer?','The outer core.')">200</td>
+<td onclick="showQA(this,'What supercontinent existed about 225 million years ago?','Pangaea.')">200</td>
+<td onclick="showQA(this,'Which plate boundary causes the strongest earthquakes?','Transform boundaries.')">200</td>
+<td onclick="showQA(this,'Which rock type forms from magma or lava?','Igneous rock.')">200</td>
+<td onclick="showQA(this,'Name one type of mine: surface or underground.','Surface mining or underground mining.')">200</td>
+</tr>
+
+<tr>
+<td onclick="showQA(this,'Which layer allows tectonic plates to move?','The asthenosphere.')">300</td>
+<td onclick="showQA(this,'What evidence supported continental drift?','Matching fossils, landforms, or rock layers.')">300</td>
+<td onclick="showQA(this,'What forms when magma reaches Earth’s surface?','Lava.')">300</td>
+<td onclick="showQA(this,'What property measures mineral hardness?','The Mohs hardness scale.')">300</td>
+<td onclick="showQA(this,'What is ore?','Rock that contains valuable minerals.')">300</td>
+</tr>
+
+<tr>
+<td onclick="showQA(this,'Why is the inner core solid?','Because of extreme pressure.')">400</td>
+<td onclick="showQA(this,'What happens at a convergent boundary?','Plates collide.')">400</td>
+<td onclick="showQA(this,'Why do volcanoes form near plate boundaries?','Because magma rises where plates move.')">400</td>
+<td onclick="showQA(this,'Which rock type can contain fossils?','Sedimentary rock.')">400</td>
+<td onclick="showQA(this,'What is reclamation?','Restoring land after mining.')">400</td>
+</tr>
+
+<tr>
+<td onclick="showQA(this,'How does Earth’s internal heat affect the surface?','It drives plate tectonics, volcanoes, and earthquakes.')">500</td>
+<td onclick="showQA(this,'Why was Wegener’s theory rejected at first?','He could not explain how continents moved.')">500</td>
+<td onclick="showQA(this,'How does subduction cause volcanoes?','One plate melts and magma rises.')">500</td>
+<td onclick="showQA(this,'How can igneous rock become metamorphic?','By heat and pressure.')">500</td>
+<td onclick="showQA(this,'Why is mining important to Canada?','It supports the economy and provides materials.')">500</td>
+</tr>
+</table>
+
+<div id="questionBox">Click a box to see the question.</div>
+<div id="answerBox" style="display:none;">Answer will appear here.</div>
+
+<button onclick="toggleAnswer()">Show / Hide Answer</button>
+
+<script>
+let currentAnswer = "";
+
+function showQA(cell, question, answer) {
+    if (!cell.classList.contains("used")) {
+        document.getElementById("questionBox").innerText = question;
+        document.getElementById("answerBox").innerText = answer;
+        document.getElementById("answerBox").style.display = "none";
+        currentAnswer = answer;
+        cell.classList.add("used");
+        cell.innerText = "";
+    }
+}
+
+function toggleAnswer() {
+    const box = document.getElementById("answerBox");
+    box.style.display = box.style.display === "none" ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
